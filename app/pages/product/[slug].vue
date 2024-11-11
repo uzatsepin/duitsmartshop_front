@@ -96,19 +96,19 @@ watchEffect(async () => {
 const technologies = [
   {
     name: "HomeKit",
-    icon: "/icons/homekit-icon.svg",
+    icon: "icons/homekit-icon.svg",
   },
   {
     name: "Google Home",
-    icon: "/icons/google-home.svg",
+    icon: "icons/google-home.svg",
   },
   {
     name: "Home Assistant",
-    icon: "/icons/homeassistant-icon.svg",
+    icon: "icons/homeassistant-icon.svg",
   },
   {
     name: "Smart Things",
-    icon: "/icons/smartthings-icon.svg",
+    icon: "icons/smartthings-icon.svg",
   },
 ];
 </script>

@@ -29,7 +29,7 @@
           товарів не знайдено
         </h3>
         <div class="mt-6 flex items-center justify-center">
-          <NuxtImg src="/empty-category.svg" class="max-w-[350px]" />
+          <NuxtImg src="icons/empty-category.svg" class="max-w-[350px]" />
         </div>
       </div>
     </div>

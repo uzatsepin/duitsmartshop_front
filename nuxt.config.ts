@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   },
   image: {
     dir: 'public',
-    staticFilename: '[publicPath]/[name][ext]',
+    staticFilename: '/[name][ext]',
     presets: {
       default: {
         modifiers: {

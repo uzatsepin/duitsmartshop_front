@@ -33,13 +33,13 @@
           <NuxtImg
             v-for="i in filledStars"
             :key="'filled-' + i"
-            src="/icons/rating-icon-fill.svg"
+            src="icons/rating-icon-fill.svg"
             class="w-4 h-4"
           />
           <NuxtImg
             v-for="i in emptyStars"
             :key="'empty-' + i"
-            src="/icons/rating-icon-empty.svg"
+            src="icons/rating-icon-empty.svg"
             class="w-4 h-4"
           />
         </div>
