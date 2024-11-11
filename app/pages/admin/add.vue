@@ -268,6 +268,7 @@ const createProduct = async () => {
 
     imagePreview.value = "";
     $toast.success("Товар створено успішно");
+    window.location.reload();
   } catch (error) {
     console.error("Error:", error);
     $toast.error(error instanceof Error ? error.message : "An unexpected error occurred");
