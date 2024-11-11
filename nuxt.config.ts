@@ -10,6 +10,14 @@ export default defineNuxtConfig({
     }
   },
 
+  app: {
+    baseURL: '/',
+    buildAssetsDir: '/_nuxt/'
+  },
+  image: {
+    dir: 'public'
+  },
+
   modules: [
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
