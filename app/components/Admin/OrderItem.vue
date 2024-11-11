@@ -64,7 +64,7 @@
             {{ translateOrderStatus(order.status) }}
           </td>
           <td class="px-6 py-4 border border-slate-200">
-            <Button @click="openOrderDetails(order.id)">Открыть детали</Button>
+            <Button @click="openOrderDetails(order.id)">Детальніше</Button>
           </td>
           <Transition name="fade">
             <PopupCenter
