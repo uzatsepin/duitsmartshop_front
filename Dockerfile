@@ -4,12 +4,14 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-# Copy public directory explicitly
-COPY ./public ./public
+# Ensure public directory is copied before generate
+COPY ./public /app/public/
 RUN npm run generate
 
 FROM nginx:alpine
+# Copy all generated files
 COPY --from=builder /app/.output/public /usr/share/nginx/html
-# Ensure static files are copied
+# Copy public assets
 COPY --from=builder /app/public /usr/share/nginx/html
-RUN chown -R nginx:nginx /usr/share/nginx/html
+RUN chown -R nginx:nginx /usr/share/nginx/html && \
+    chmod -R 755 /usr/share/nginx/html
