@@ -16,16 +16,16 @@ export default defineNuxtConfig({
   },
   image: {
     dir: 'public',
-    staticFilename: '/[name][ext]',
+    staticFilename: '[name][ext]',
     presets: {
-      default: {
-        modifiers: {
-          format: 'webp',
-          quality: 80
+        default: {
+            modifiers: {
+                format: 'webp',
+                quality: 80
+            }
         }
-      }
     }
-  },
+},
 
   modules: [
     "@nuxtjs/tailwindcss",
