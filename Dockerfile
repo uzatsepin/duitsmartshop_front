@@ -13,5 +13,5 @@ COPY --from=builder /app/.output/public /usr/share/nginx/html
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
     chmod -R 755 /usr/share/nginx/html
 
-# Add custom nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Add custom nginx config - fix path
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
