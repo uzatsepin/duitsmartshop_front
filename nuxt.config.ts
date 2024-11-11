@@ -15,7 +15,16 @@ export default defineNuxtConfig({
     buildAssetsDir: '/_nuxt/'
   },
   image: {
-    dir: 'public'
+    dir: 'public',
+    staticFilename: '[publicPath]/[name][ext]',
+    presets: {
+      default: {
+        modifiers: {
+          format: 'webp',
+          quality: 80
+        }
+      }
+    }
   },
 
   modules: [
