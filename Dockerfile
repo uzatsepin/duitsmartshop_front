@@ -1,11 +1,10 @@
-FROM node:18-alpine
-
+# frontend/Dockerfile
+FROM node:18-alpine AS builder
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm install
-
 COPY . .
-RUN npm run build
+RUN npm run generate
 
-CMD ["npm", "run", "preview"]
+FROM nginx:alpine
+COPY --from=builder /app/.output/public /usr/share/nginx/html
