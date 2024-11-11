@@ -19,7 +19,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: 'http://localhost:3030',
+      apiBase: 'https://felearn.pro/api',
     }
   },
 
