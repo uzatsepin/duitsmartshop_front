@@ -44,7 +44,7 @@
     </div>
     <ProductCardDescr :name="product.name" :description="product.description" />
     <ProductCardReviews :reviews="product.reviews" />
-    <LazyProductCardFaq />
+    <!-- <LazyProductCardFaq /> -->
     <LazyProductCardSameProducts
       :categoryProducts="productsStore.productsByCategory"
       :loading="loadingCategory"
