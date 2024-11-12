@@ -10,7 +10,9 @@
       <tr>
         <td class="px-6 py-4 border border-slate-200">Дата замовлення</td>
         <td class="px-6 py-4 border border-slate-200">
-          <time>{{ dayjs(order.orderDate).format("DD-MM-YY – HH:mm") }}</time>
+          <time class="text-sm text-slate-500">{{
+            dayjs(order.orderDate).format("DD-MM-YY – HH:mm")
+          }}</time>
         </td>
       </tr>
       <tr>

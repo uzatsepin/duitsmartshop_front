@@ -45,7 +45,7 @@
           {{ review?.likes }}
         </p>
       </div>
-      <time>{{
+      <time class="text-sm text-slate-500">{{
         review?.created ? formatDate(new Date(review.created).toISOString()) : "N/A"
       }}</time>
     </div>
