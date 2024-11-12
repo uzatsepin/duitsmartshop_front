@@ -1,8 +1,13 @@
 <template>
   <carousel :items-to-show="1" class="mt-6">
     <slide v-for="slide in banners" :key="slide.id">
-      <div class="max-h-[500px] w-full bg-slate-400 flex items-center justify-center">
-        <NuxtImg :src="slide.imageUrl" class="w-full h-full object-contain" />
+      <div
+        class="max-h-[500px] w-full bg-slate-400 flex items-center justify-center rounded-2xl overflow-hidden"
+      >
+        <NuxtImg
+          :src="slide.imageUrl"
+          class="w-full h-full object-contain rounded-2xl overflow-hidden"
+        />
       </div>
     </slide>
 
