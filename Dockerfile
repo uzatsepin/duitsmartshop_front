@@ -6,6 +6,7 @@ RUN npm install
 COPY . .
 # Ensure public directory is copied before generate
 COPY ./public /app/public/
+COPY public/icons /usr/share/nginx/html/icons
 RUN npm run generate
 
 FROM nginx:alpine
