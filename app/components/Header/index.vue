@@ -5,7 +5,9 @@
       <HeaderLogo />
 
       <!-- Navigation -->
-      <HeaderMenu />
+      <div class="hidden md:flex items-center space-x-4">
+        <HeaderMenu />
+      </div>
 
       <!-- User Actions -->
       <div class="flex items-center space-x-4">

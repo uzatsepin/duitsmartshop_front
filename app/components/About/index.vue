@@ -2,7 +2,7 @@
   <div class="mt-12">
     <h2 class="text-center text-3xl font-bold">Переваги розумного будинку сьогодні 👇</h2>
 
-    <div class="mt-12 flex gap-8 items-center">
+    <div class="mt-12 flex gap-8 items-center flex-col md:flex-row">
       <NuxtImg src="icons/smart-home.jpg" class="rounded-3xl" />
 
       <div>

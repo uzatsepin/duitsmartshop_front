@@ -1,7 +1,9 @@
 <template>
   <footer class="bg-white mt-12">
     <NuxtLayout name="default">
-      <div class="grid grid-cols-3 gap-10 p-10 items-end w-full">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-3 gap-10 p-0 pb-6 lg:p-10 lg:pb-0 items-end w-full"
+      >
         <!--        Contacts-->
         <div>
           <div class="flex items-center">

@@ -6,6 +6,9 @@
       <NuxtImg
         :src="product?.imageUrl"
         class="w-full max-h-[260px] min-h-[260px] object-contain rounded-t-2xl bg-white"
+        :placeholder="true"
+        :alt="product?.name"
+        :title="product?.name"
       />
     </NuxtLink>
     <div

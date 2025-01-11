@@ -70,6 +70,32 @@ const categoryName = computed(() =>
 
 const catalogProducts = computed(() => productsStore.productsByCategory);
 
+useHead({
+  title: `Каталог товарів – ${categoryName?.value?.name}`,
+  htmlAttrs: {
+    lang: "uk",
+  },
+  link: [
+    {
+      rel: "canonical",
+      href: `https://felearn.pro/catalog/${route.params.category}`,
+    },
+  ],
+})
+
+useSeoMeta({
+  title: `Каталог товарів – ${categoryName?.value?.name}`,
+  description: `Каталог товарів – ${categoryName?.value?.name}. Купити в Києві та Україні. Доставка по всій Україні.`,
+  ogType: "website",
+  ogTitle: `Каталог товарів – ${catalogProducts.value[0]?.category?.name}`,
+  ogUrl: `https://felearn.pro/catalog/${route.params.category}`,
+  ogImage: `https://felearn.pro/og-image.jpg`,
+
+  author: "DuitSmartHome",
+  robots: "index, follow",
+  publisher: "DuitSmartHome",
+})
+
 watch(
   () => route.params.category,
   async (newCategory) => {

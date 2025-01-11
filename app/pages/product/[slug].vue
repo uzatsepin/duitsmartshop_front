@@ -1,17 +1,21 @@
 <template>
   <Header />
   <NuxtLayout>
-    <div class="flex gap-14 mt-12">
+    <div class="flex flex-col lg:flex-row gap-6 lg:gap-14 mt-4 lg:mt-12">
       <div class="w-full max-w-[600px]">
         <NuxtImg
           :src="product.imageUrl"
-          class="min-w-[600px] max-h-[600px] w-full object-contain block rounded-3xl"
+          class="lg:min-w-[600px] max-h-[600px] w-full object-contain block rounded-3xl"
+          :alt="product.name"
+          :title="product.name"
+          :placeholder="true"
         />
       </div>
       <div class="">
         <NuxtLink
           :to="`/catalog/${product?.category?.slug}`"
           class="flex items-center gap-2 group"
+          title="Повернутися до категорії"
         >
           <Icon name="ep:arrow-left-bold" class="w-4 h-4 group-hover:text-slate-500" />
           <span class="group-hover:text-slate-500">{{ product?.category?.name }}</span>
@@ -28,10 +32,10 @@
           :productId="product.id"
         />
         <div class="mt-2">
-          <p class="text-md text-slate-600 flex items-center gap-2">
+          <p class="text-md text-slate-600 lg:flex items-center gap-2">
             <Icon name="iconamoon:discount" class="w-6 h-6 text-green-600" />
             Замов сьогодні і ми відправимо тобі товар зі знижкою
-            <span class="text-red-400"> 5%</span>
+            <span class="text-red-400 inline">5%</span>
           </p>
         </div>
         <ProductCardShortDescr
@@ -75,8 +79,8 @@ useHead({
     {
       rel: "canonical",
       href: `https://felearn.pro/product/${product?.value?.slug}`,
-    }
-  ]
+    },
+  ],
 });
 
 useSeoMeta({
@@ -85,7 +89,9 @@ useSeoMeta({
       ? `${product?.value?.name} – DuitSmartHome розумний будинок`
       : "DuitSmartHome розумний будинок"
   ),
-  description: computed(() => `${product?.value?.name} – Купити в Києві та Україні. Доставка по всій Україні.`),
+  description: computed(
+    () => `${product?.value?.name} – Купити в Києві та Україні. Доставка по всій Україні.`
+  ),
 
   ogType: "website",
   ogUrl: computed(() => `https://felearn.pro/product/${product?.value?.slug}`),
@@ -99,7 +105,7 @@ useSeoMeta({
   author: "DuitSmartHome",
   robots: "index, follow",
   publisher: "DuitSmartHome",
-})
+});
 
 onMounted(async () => {
   try {

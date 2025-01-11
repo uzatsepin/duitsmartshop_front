@@ -2,7 +2,7 @@
   <div class="mt-12 bg-white">
     <div class="container mx-auto px-2 py-10">
       <h2 class="text-center text-3xl font-bold">Вибір пристроїв розумного будинку</h2>
-      <div class="mt-8 flex justify-between">
+      <div class="mt-8 flex justify-between gap-2 overflow-scroll">
         <CategoriesItem
           v-for="category in categories"
           :key="category.id"
@@ -11,8 +11,11 @@
           @select="selectCategory({ ...category, id: Number(category.id) })"
         />
       </div>
-      <div class="mt-10 flex gap-6" v-if="filteredProducts.length >= 1">
-        <transition-group name="product-list" tag="div" class="flex flex-wrap gap-8">
+      <div
+        class="mt-10 flex gap-2 lg:gap-6 overflow-scroll"
+        v-if="filteredProducts.length >= 1"
+      >
+        <transition-group name="product-list" tag="div" class="flex gap-2 lg:gap-8">
           <ProductItem
             v-for="product in filteredProducts"
             :key="product.id"
