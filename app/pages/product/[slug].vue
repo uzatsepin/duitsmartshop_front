@@ -68,7 +68,38 @@ useHead({
       ? `${product?.value?.name} – DuitSmartHome розумний будинок`
       : "DuitSmartHome розумний будинок"
   ),
+  htmlAttrs: {
+    lang: "uk",
+  },
+  link: [
+    {
+      rel: "canonical",
+      href: `https://felearn.pro/product/${product?.value?.slug}`,
+    }
+  ]
 });
+
+useSeoMeta({
+  title: computed(() =>
+    product?.value?.name
+      ? `${product?.value?.name} – DuitSmartHome розумний будинок`
+      : "DuitSmartHome розумний будинок"
+  ),
+  description: computed(() => `${product?.value?.name} – Купити в Києві та Україні. Доставка по всій Україні.`),
+
+  ogType: "website",
+  ogUrl: computed(() => `https://felearn.pro/product/${product?.value?.slug}`),
+  ogImage: computed(() => product?.value?.imageUrl),
+  ogTitle: computed(() =>
+    product?.value?.name
+      ? `${product?.value?.name} – DuitSmartHome розумний будинок`
+      : "DuitSmartHome розумний будинок"
+  ),
+
+  author: "DuitSmartHome",
+  robots: "index, follow",
+  publisher: "DuitSmartHome",
+})
 
 onMounted(async () => {
   try {

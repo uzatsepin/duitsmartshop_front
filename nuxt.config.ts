@@ -3,29 +3,39 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   nitro: {
-    preset: 'static',
+    preset: "static",
     output: {
-      dir: '.output/public',
-      publicDir: '.output/public'
-    }
+      dir: ".output/public",
+      publicDir: ".output/public",
+    },
   },
 
   app: {
-    baseURL: '/',
-    buildAssetsDir: '/_nuxt/'
+    baseURL: "/",
+    buildAssetsDir: "/_nuxt/",
+    head: {
+      script: [
+        {
+          src: "https://stats.razdev.website/tracker.js",
+          async: true,
+          defer: true,
+          "data-website-id": "cm5s8z0al0003kcfzf3wrbymp",
+        },
+      ],
+    },
   },
   image: {
-    dir: 'public',
-    staticFilename: '[name][ext]',
+    dir: "public",
+    staticFilename: "[name][ext]",
     presets: {
-        default: {
-            modifiers: {
-                format: 'webp',
-                quality: 80
-            }
-        }
-    }
-},
+      default: {
+        modifiers: {
+          format: "webp",
+          quality: 80,
+        },
+      },
+    },
+  },
 
   modules: [
     "@nuxtjs/tailwindcss",
@@ -44,8 +54,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: 'https://felearn.pro/api',
-    }
+      apiBase: "https://felearn.pro/api",
+    },
   },
 
   future: {

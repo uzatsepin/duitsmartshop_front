@@ -10,6 +10,7 @@ useSeoMeta({
     "Інтернет-магазин DuitSmartHome пропонує широкий асортимент товарів для розумного будинку, це датчики, вимикачі, розумні лампочки, сенсори, панелі керування та багато іншого.",
   ogUrl: "https://felearn.pro/",
   ogType: "website",
+  ogImage: "https://felearn.pro/og-image.jpg",
 });
 </script>
 

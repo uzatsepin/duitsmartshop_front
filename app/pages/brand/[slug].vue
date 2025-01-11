@@ -24,6 +24,8 @@
     </div>
 
     <BrandsDescr v-if="brand" :brand="brand" />
+
+    {{ pageTitle }}
   </NuxtLayout>
 
   <Footer />
@@ -40,6 +42,43 @@ const productsByBrand = ref<IProduct[]>();
 const brand = ref<IBrand | null>(null);
 const isLoading = ref<boolean>(false);
 const error = ref<string | null>(null);
+
+const pageTitle = computed(() => 
+  brand.value?.name 
+    ? `${brand.value.name} – Товари для розумного будинку з доставкою по Україні`
+    : 'Товари для розумного будинку Київ'
+)
+
+const ogImage = computed(() => brand.value?.icon);
+
+useHead({
+  title: pageTitle,
+  htmlAttrs: {
+    lang: 'uk',
+  },
+  link: [
+    {
+      rel: 'canonical',
+      href: `https://felearn.pro/brand/${slug}`,
+    },
+  ],
+})
+
+useSeoMeta({
+  title: pageTitle,
+  description: 'Пропонуємо широкий асортимент товарів для розумного будинку в Києві. Це датчики, вимикачі, розумні лампочки, сенсори, панелі керування та багато іншого.',
+
+  ogTitle: pageTitle,
+  ogDescription: 'Пропонуємо широкий асортимент товарів для розумного будинку в Києві. Це датчики, вимикачі, розумні лампочки, сенсори, панелі керування та багато іншого.',
+  ogType: 'website',
+  ogUrl: `https://felearn.pro/brand/${slug}`,
+  ogImage: ogImage,
+
+  author: 'DuitSmartHome',
+  robots: 'index, follow',
+  publisher: 'DuitSmartHome',
+  
+})
 
 onMounted(async () => {
   try {
