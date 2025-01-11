@@ -19,7 +19,7 @@ export default defineNuxtConfig({
           src: "https://stats.razdev.website/tracker.js",
           async: true,
           defer: true,
-          "data-website-id": "cm5s8z0al0003kcfzf3wrbymp",
+          "data-website-id": "cm5s93jj40005kcfzlv2e8glj",
         },
       ],
     },
