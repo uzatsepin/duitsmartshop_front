@@ -1,15 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   ssr: false,
   nitro: {
-    preset: "static",
+    preset: 'static',
+    serveStatic: true,
     output: {
       dir: ".output/public",
       publicDir: ".output/public",
     },
   },
-
   app: {
     baseURL: "/",
     buildAssetsDir: "/_nuxt/",
@@ -25,18 +25,20 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    dir: "public",
-    staticFilename: "[name][ext]",
+    dir: 'public/icons',
+    domains: ['felearn.pro'],
+    format: ['svg', 'webp', 'png', 'jpeg'],
+    provider: 'ipx',
+    staticFilename: '[name][ext]',
     presets: {
       default: {
         modifiers: {
-          format: "webp",
-          quality: 80,
-        },
-      },
-    },
+          format: 'webp',
+          quality: 80
+        }
+      }
+    }
   },
-
   modules: [
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
